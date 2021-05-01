@@ -1,0 +1,38 @@
+name: CI-CD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  CI:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run React unit tests
+      run: |
+        npm install
+        npm test -- --watchAll=false
+  CD:
+    name: Continuous Delivery
+    needs: CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.SERVER_IP}}
+          username: ${{secrets.SERVER_USER}}
+          key: ${{secrets.SERVER_SSH_SK}}
+          port: ${{secrets.SERVER_PORT}}
+          script: |
+            cd Paburo
+            git fetch --all
+            git reset --hard origin/master
+            git status
+            npm install
+            npm run build
