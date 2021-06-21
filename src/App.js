@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from "react-redux";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Articles from './components/Articles/Articles';
@@ -17,8 +16,4 @@ function App() {
 	);
 }
 
-const matStateToProps = state => ({state:state})
-
-const connectedApp = connect(matStateToProps, {})(App)
-
-export default connectedApp;
+export default App;
