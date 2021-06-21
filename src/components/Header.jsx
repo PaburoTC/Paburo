@@ -1,11 +1,27 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/SCSS/Header.scss'
 
 const Header = () => {
 
 	return(
 		<header>
-			PABURO
+			<NavLink to="/articles"   activeClassName="activeNav">
+				<span>Articles</span>
+				<div/>
+			</NavLink>
+			<NavLink to="/work"   activeClassName="activeNav">
+				<span>Work</span>
+				<div/>
+			</NavLink>
+			<NavLink to="/education"   activeClassName="activeNav">
+				<span>Education</span>
+				<div/>
+			</NavLink>
+			<NavLink to="/projects"   activeClassName="activeNav">
+				<span>Projects</span>
+				<div/>
+			</NavLink>
 		</header>
 	);
 };
