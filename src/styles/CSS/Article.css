@@ -1,0 +1,31 @@
+.article {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 5%;
+  cursor: pointer;
+}
+.article > div {
+  width: 12px;
+  height: 98px;
+  background-color: #C0B7B1;
+  border-radius: 10px;
+  margin-right: 1%;
+  transition: 0.3s;
+}
+.article h3 {
+  width: 500px;
+  text-align: left;
+  margin-top: 0;
+}
+.article img {
+  width: 200px;
+  height: 133px;
+  object-fit: cover;
+  margin: 0 0 0 5%;
+}
+
+.article:hover > div {
+  background-color: #FCFF6C;
+  width: 20px;
+}
