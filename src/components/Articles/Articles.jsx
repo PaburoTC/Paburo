@@ -29,28 +29,29 @@ const Articles = (props)=>{
 	}, [])
 
 	return(
-		<React.Fragment>
-			{props.state.articles.pending ?
-				<Spinner animation="border" role="status">
-					<span className="sr-only">Loading...</span>
-			  	</Spinner>:
-				<section id="articles">
-					<span>
-						<h1>Articles</h1>
-						<p>
-							Teaching is considered by many one of the best ways to consolidate knowledge. Not only that, but it is also one of the few activities of which I know that
-							is net positive for all parties involved! My readers get the chance to learn something new while I keep record of my new learnings and findings, 
-							strengthening my understanding of them in the process.
-						</p>
-					</span>
-					<div>
+		<section id="articles">
+			<span>
+				<h1>Articles</h1>
+				<p>
+					Teaching is considered by many one of the best ways to consolidate knowledge. Not only that, but it is also one of the few activities of which I know that
+					is net positive for all parties involved! My readers get the chance to learn something new while I keep record of my new learnings and findings, 
+					strengthening my understanding of them in the process.
+				</p>
+			</span>
+			<div>
+				{props.state.articles.pending ? 
+					<Spinner animation="border" role="status">
+						<span className="sr-only">Loading...</span>
+					</Spinner>
+					:
+					<React.Fragment>
 						{props.state.articles.articles.map(article=> {
 							return <Article key={nanoid()} title={article.title} img={article.thumbnail} url={article.link} date={article.pubDate.split(" ")[0]}/>
 						})}
-					</div>
-				</section>
-			}
-		</React.Fragment>
+					</React.Fragment>
+				}
+			</div>
+		</section>
 	)
 }
 
