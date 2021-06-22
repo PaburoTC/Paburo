@@ -37,7 +37,11 @@ const Articles = (props)=>{
 				<section id="articles">
 					<span>
 						<h1>Articles</h1>
-						<p>ASADS</p>
+						<p>
+							Teaching is considered by many one of the best ways to consolidate knowledge. Not only that, but it is also one of the few activities of which I know that
+							is net positive for all parties involved! My readers get the chance to learn something new while I keep record of my new learnings and findings, 
+							strengthening my understanding of them in the process.
+						</p>
 					</span>
 					<div>
 						{props.state.articles.articles.map(article=> {
