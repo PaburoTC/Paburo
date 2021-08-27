@@ -8,7 +8,7 @@ import {nanoid} from 'nanoid';
 import {
 	fetchArticlesPending,
 	fetchArticlesSuccess
-} from "../../services/redux/articles/actions"
+} from '../../services/redux/articles/actions';
 import '../../styles/SCSS/Articles.scss';
 
 const Articles = (props)=>{
@@ -45,8 +45,8 @@ const Articles = (props)=>{
 					</Spinner>
 					:
 					<React.Fragment>
-						{props.state.articles.articles.map(article=> {
-							return <Article key={nanoid()} title={article.title} img={article.thumbnail} url={article.link} date={article.pubDate.split(" ")[0]}/>
+						{props.state.articles.articles.map((article, index)=> {
+							return <Article key={nanoid()} index={index} title={article.title} img={article.thumbnail} url={article.link} date={article.pubDate.split(" ")[0]}/>
 						})}
 					</React.Fragment>
 				}

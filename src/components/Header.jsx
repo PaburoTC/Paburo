@@ -10,8 +10,8 @@ const Header = () => {
 				<span>Articles</span>
 				<div/>
 			</NavLink>
-			<NavLink to="/work"   activeClassName="activeNav">
-				<span>Work</span>
+			<NavLink to="/experience"   activeClassName="activeNav">
+				<span>Experience</span>
 				<div/>
 			</NavLink>
 			<NavLink to="/education"   activeClassName="activeNav">

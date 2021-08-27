@@ -6,6 +6,7 @@
   margin: 5%;
   cursor: pointer;
   flex-grow: 1;
+  animation: article_intro 2s forwards;
 }
 .article > div {
   width: 12px;
